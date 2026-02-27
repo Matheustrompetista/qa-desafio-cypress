@@ -1,0 +1,27 @@
+name: Execução dos Testes - Cypress
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar dependências e Executar Cypress
+        uses: cypress-io/github-action@v6
+        # Esta action oficial já faz o npm install e roda o npx cypress run automaticamente!
+
+      - name: Salvar relatórios de teste (Artefatos)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-artefatos
+          path: |
+            cypress/videos
+            cypress/screenshots
