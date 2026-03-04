@@ -1,21 +1,23 @@
-# Desafio QA - Testes de Interface com Cypress
+# 🧪 Desafio QA - Automação Cypress (Front-end)
 
-Este repositório contém a automação dos fluxos de Login e Checkout do site SauceDemo, utilizando Cypress e o padrão Page Objects.
+![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-## Pré-requisitos
-- Node.js instalado.
+Automação E2E (End-to-End) desenvolvida em **Cypress** para validar os fluxos críticos da aplicação SauceDemo, aplicando o padrão de projeto **Page Object Model (POM)** para garantir um código limpo e de fácil manutenção.
 
-## Como instalar as dependências
-Execute o comando abaixo na raiz do projeto:
-`npm install`
+## 🎯 Escopo e Cenários (Happy & Unhappy Paths)
+Foram desenvolvidos testes cobrindo tanto o uso correto do sistema quanto a validação de exceções e erros de formulário:
+- ✅ Login com sucesso e ❌ Login com credenciais inválidas.
+- ✅ Checkout de compras completo e ❌ Bloqueio de checkout com campos obrigatórios vazios.
 
-## Como executar os testes
-Para abrir a interface interativa do Cypress:
-`npx cypress open`
+## ⚙️ Integração Contínua (CI/CD) com GitHub Actions
+O projeto conta com uma esteira de CI/CD configurada para acionamento automático (Shift-Left Testing).
+- **Execução na Nuvem:** A cada novo *push*, o GitHub Actions executa os testes em modo **Headless** (background), garantindo a estabilidade através do container oficial do Cypress.
+- **Evidências Automáticas:** Os testes foram configurados para gerar **Screenshots (`cy.screenshot`)** em momentos cruciais e automaticamente em caso de falha.
+- **Artefatos:** Todos os vídeos e imagens gerados durante a execução ficam disponíveis para download na aba **Actions** do GitHub.
 
-Para rodar os testes em modo headless (segundo plano) no terminal:
-`npx cypress run`
-
-## Estrutura do Projeto
-- `cypress/e2e/`: Contém os arquivos de teste (`.cy.js`).
-- `cypress/support/pages/`: Contém as classes de Page Objects, separando a lógica de mapeamento e ações das páginas.
+## 🚀 Como Executar Localmente
+1. Clone o repositório e instale as dependências:
+   ```bash
+   npm install

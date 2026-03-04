@@ -1,0 +1,11 @@
+# Dependências do Node
+node_modules/
+
+# Evidências geradas pelo Cypress (Vídeos e Screenshots)
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# Relatórios e arquivos de ambiente
+.env
+cypress.env.json

@@ -27,4 +27,4 @@ class LoginPage {
 }
 
 // Exporta a classe para usarmos no teste
-export const loginPage = new LoginPage();
+                                         export const loginPage = new LoginPage();
